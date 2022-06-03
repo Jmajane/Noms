@@ -37,3 +37,15 @@
 - Postgresql
 
 # Wireframes
+
+![Screen Shot 2022-06-03 at 12 12 03 PM](https://user-images.githubusercontent.com/100162086/171935039-fb5ccd64-89e3-4d4a-96c4-d55f8293bc69.png)
+
+![Screen Shot 2022-06-03 at 1 54 30 PM](https://user-images.githubusercontent.com/100162086/171935104-5d043d98-9c2f-41cd-914c-b717b568797b.png)
+
+
+![Screen Shot 2022-06-03 at 1 57 23 PM](https://user-images.githubusercontent.com/100162086/171935134-a43a9760-16e4-4b89-8839-51e44ea93b46.png)
+
+![Screen Shot 2022-06-03 at 2 07 19 PM](https://user-images.githubusercontent.com/100162086/171935171-ccd09225-216d-447e-8a50-2d3f986d5c28.png)
+
+# ERD
+![Screen Shot 2022-06-03 at 3 22 33 PM](https://user-images.githubusercontent.com/100162086/171935184-78d0ddbd-fa3b-4cdb-979e-5b5665902445.png)
