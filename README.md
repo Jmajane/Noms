@@ -48,4 +48,5 @@
 ![Screen Shot 2022-06-03 at 2 07 19 PM](https://user-images.githubusercontent.com/100162086/171935171-ccd09225-216d-447e-8a50-2d3f986d5c28.png)
 
 # ERD
-![Screen Shot 2022-06-03 at 3 22 33 PM](https://user-images.githubusercontent.com/100162086/171935184-78d0ddbd-fa3b-4cdb-979e-5b5665902445.png)
+![Screen Shot 2022-06-03 at 4 24 49 PM](https://user-images.githubusercontent.com/100162086/171946682-3bf80e3c-5da0-47f9-9cdb-61a4199fd99f.png)
+
