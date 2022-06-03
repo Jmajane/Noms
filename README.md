@@ -20,3 +20,20 @@
 - Why is fasting recommended? Are you saying that I can't eat for 12+ hours inorder to create healthy eating habbits?
 
 - I know that tracking your food is important. Can we just keep track of the healthy vs not healthy food that we have? Just being able to see what foods I had is what I am looking for.
+
+# User Flow
+- When A user visits the site they will be able to see the home/about pages until they sign up.
+
+- Once a user signs up they will then have access to add their meals for the day.  Pages will have a day total, week, monthly and year. Users will be able to add/delete/edit any of their own meals that they have added. 
+
+
+# Search
+- Users and search by username to request the ability to follow another user
+
+
+# Technologies Used
+- Python
+- Django
+- Postgresql
+
+# Wireframes
