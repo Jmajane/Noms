@@ -13,3 +13,10 @@
 
 - At Noms we want to help you track the food you eat. Not make you moderate what you eat. Maybe just maybe.... you will make the healthy choice of what you eat on your own and remember, nom nom nom!
 
+
+# User Stories
+- Always wanting to start tracking my food but, it is so hard to choose which method to use.  I don't want to have to buy a scale to weigh my food or measure everything I am eating. Why isn't there something for people just learning about this.
+
+- Why is fasting recommended? Are you saying that I can't eat for 12+ hours inorder to create healthy eating habbits?
+
+- I know that tracking your food is important. Can we just keep track of the healthy vs not healthy food that we have? Just being able to see what foods I had is what I am looking for.
