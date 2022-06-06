@@ -3,6 +3,7 @@ from django.views import View
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 from .models import Meal
+from django.views.generic.edit import CreateView
 
 
 class Home(TemplateView):
@@ -28,3 +29,13 @@ class MealList(TemplateView):
             context["header"] = "Past Meals"
         return context
 
+class MealCreate(CreateView):
+    model = Meal
+    fields = ['dish', 'Fish_Chicken_Eggs', 'Nuts_Seeds_Beans_Tofu', 'Dairy', 
+    'Vegetable', 'Fruits', 'Healthy_Fats_Oils', 'Whole_Grains', 'Sugary_Treats',
+    'Salty_Treats', 'Wheat_Flour_Corn_Treats', 'Alcohol']
+    template_name = "meal_create.html"
+    success_url = "/meals/"
+    
+
+    
