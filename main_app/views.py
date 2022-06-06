@@ -7,3 +7,11 @@ class Home(View):
 
     def get(self, request):
         return HttpResponse("Noms Home")
+
+
+class About(View):
+
+    def get(self, request):
+        return HttpResponse("About Noms")
+
+
