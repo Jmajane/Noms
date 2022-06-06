@@ -18,6 +18,13 @@ class MealList(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["meals"] = Meal.objects.all()
+        dish = self.request.GET.get('dish')
 
+        if dish != None:
+            context["meals"] = Meal.objects.filter(name_icontains=dish)
+            context["header"] = f"Searching for {dish}"
+        else:
+            context["meals"] = Meal.objects.all()
+            context["header"] = "Past Meals"
         return context
+
