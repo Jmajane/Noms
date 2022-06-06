@@ -35,6 +35,8 @@
 - Python
 - Django
 - Postgresql
+- Bulma
+- Jquery
 
 # Wireframes
 
