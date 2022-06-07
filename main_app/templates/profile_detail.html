@@ -1,11 +1,11 @@
 {% extends 'base.html' %} 
 {% block content %}
 <div class="detail__img">
-    
+    <img src="{{profile.profile_pic}}" alt="{{profile.name}}" />
 </div>
 <div class="detail__name">
     
-    <h1 class="title">{{profile.user.username}}</h1>
+    <h1 class="title">{{profile.name}}</h1>
 </div>
 <div class="detail__container">
     <div class="buttons">
@@ -22,7 +22,7 @@
     </div>
     <div class="detail__about">
         <h4 class="title is-4">Profile</h4>
-        
+        <h5>{{profile.favorite_food}}</h5>
     </div>
 </div>
 
