@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
@@ -6,6 +6,8 @@ from .models import Meal
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import DetailView
 from django.urls import reverse
+from django.contrib.auth import login
+from django.contrib.auth.forms import UserCreationForm
 
 
 class Home(TemplateView):
@@ -24,10 +26,11 @@ class MealList(TemplateView):
         dish = self.request.GET.get('dish')
 
         if dish != None:
-            context["meals"] = Meal.objects.filter(name_icontains=dish)
+            context["meals"] = Meal.objects.filter(name_icontains=dish, 
+            user=self.request.user)
             context["header"] = f"Searching for {dish}"
         else:
-            context["meals"] = Meal.objects.all()
+            context["meals"] = Meal.objects.filter(user=self.request.user)
             context["header"] = "Past Meals"
         return context
 
@@ -62,3 +65,20 @@ class MealDelete(DeleteView):
     model = Meal
     template_name = "meal_delete_confirmation.html"
     success_url = "/meals/"
+
+
+class Signup(View):
+    def get(self, request):
+        form = UserCreationForm()
+        context = {"form": form}
+        return render(request, "registration/signup.html", context)
+
+    def post(self, request):
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect("artist_list")
+        else:
+            context = {"form": form}
+            return render(request, "registration/signup.html", context)
