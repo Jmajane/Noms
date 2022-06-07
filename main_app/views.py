@@ -5,6 +5,7 @@ from django.views.generic.base import TemplateView
 from .models import Meal
 from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic import DetailView
+from django.urls import reverse
 
 
 class Home(TemplateView):
@@ -36,7 +37,9 @@ class MealCreate(CreateView):
     'Vegetable', 'Fruits', 'Healthy_Fats_Oils', 'Whole_Grains', 'Sugary_Treats',
     'Salty_Treats', 'Wheat_Flour_Corn_Treats', 'Alcohol']
     template_name = "meal_create.html"
-    success_url = "/meals/"
+    
+    def get_success_url(self):
+        return reverse('meal_detail', kwargs={'pk': self.object.pk})
 
 
 class MealDetail(DetailView):
@@ -49,5 +52,7 @@ class MealUpdate(UpdateView):
     fields = ['dish', 'Fish_Chicken_Eggs', 'Nuts_Seeds_Beans_Tofu', 'Dairy', 
     'Vegetable', 'Fruits', 'Healthy_Fats_Oils', 'Whole_Grains', 'Sugary_Treats',
     'Salty_Treats', 'Wheat_Flour_Corn_Treats', 'Alcohol']
-    template_name = "meal_create.html"
-    success_url = "/meals/"
+    template_name = "meal_update.html"
+    
+    def get_success_url(self):
+        return reverse('meal_detail', kwargs={'pk': self.object.pk})
