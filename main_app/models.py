@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
+from django.contrib.auth.models import User
 
 
 
@@ -29,6 +30,7 @@ class Meal(models.Model):
     Salty_Treats = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(5)])
     Wheat_Flour_Corn_Treats = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(5)])
     Alcohol = models.IntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(5)])
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
 
     def __str__(self):
         return self.dish
