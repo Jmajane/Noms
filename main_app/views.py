@@ -3,7 +3,7 @@ from django.views import View
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 from .models import Meal
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.views.generic import DetailView
 
 
@@ -43,3 +43,11 @@ class MealDetail(DetailView):
     model = Meal
     template_name = "meal_detail.html"
     
+
+class MealUpdate(UpdateView):
+    model = Meal
+    fields = ['dish', 'Fish_Chicken_Eggs', 'Nuts_Seeds_Beans_Tofu', 'Dairy', 
+    'Vegetable', 'Fruits', 'Healthy_Fats_Oils', 'Whole_Grains', 'Sugary_Treats',
+    'Salty_Treats', 'Wheat_Flour_Corn_Treats', 'Alcohol']
+    template_name = "meal_create.html"
+    success_url = "/meals/"
