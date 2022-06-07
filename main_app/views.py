@@ -106,3 +106,11 @@ class ProfileDetail(DetailView):
     model = Profile
     template_name = "profile_detail.html"
 
+class ProfileUpdate(UpdateView):
+    model = Profile
+    fields = ('profile_pic', 'name', 'favorite_food')
+    template_name = "profile_update.html"
+
+    def get_success_url(self):
+        return reverse('profile_detail', kwargs={'pk': self.object.pk})
+
