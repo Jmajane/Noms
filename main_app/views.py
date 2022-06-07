@@ -3,7 +3,7 @@ from django.views import View
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 from .models import Meal
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import DetailView
 from django.urls import reverse
 
@@ -56,3 +56,9 @@ class MealUpdate(UpdateView):
     
     def get_success_url(self):
         return reverse('meal_detail', kwargs={'pk': self.object.pk})
+
+
+class MealDelete(DeleteView):
+    model = Meal
+    template_name = "meal_delete_confirmation.html"
+    success_url = "/meals/"
