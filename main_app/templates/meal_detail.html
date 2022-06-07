@@ -1,0 +1,44 @@
+{% extends 'base.html' %} 
+{% block content %}
+<div class="detail__img">
+    
+</div>
+<div class="detail__name">
+    
+    <h1 class="title">{{meal.dish}}</h1>
+</div>
+<div class="detail__container">
+    <div class="buttons">
+        <a href="" class="button is-info">
+            <span class="icon">
+                <i class="fas fa-edit"></i>
+            </span>
+        </a>
+        <a href="" class="button is-danger">
+            <span class="icon">
+                <i class="fas fa-trash-alt"></i>
+            </span>
+        </a>
+    </div>
+    <div class="detail__about">
+        <h4 class="title is-4">Meal Details</h4>
+        <ul><h3>Healthy Foods</h3>
+            <h5>Fish/Chicken/Eggs = {{meal.Fish_Chicken_Eggs}}</h5>
+            <h5>Nuts/Seeds/Beans/Tofu = {{meal.Nuts_Seeds_Beans_Tofu}}</h5>
+            <h5>Dairy (milk/yogurt) = {{meal.Dairy}}</h5>
+            <h5>Vegetables = {{meal.Vegetable}}</h5>
+            <h5>Fruits = {{meal.Fruits}}</h5> 
+            <h5>Healthy Fats/Oils = {{meal.Healthy_Fats_Oils}}</h5>
+            <h5>Whole Grains = {{meal.Whole_Grains}}</h5>
+        </ul>
+    </br>
+        <ul><h3>Happy Foods</h3>
+            <h5>Sugary Treats = {{meal.Sugary_Treats}}</h5>
+            <h5>Salty Treats = {{meal.Salty_Treats}}</h5>    
+            <h5>Wheat/Flour/Corn Treats = {{meal.Wheat_Flour_Corn_Treats}}</h5>
+            <h5>Alcohol = {{meal.Alcohol}}</h5>
+        </ul>
+    </div>
+</div>
+
+{% endblock %}

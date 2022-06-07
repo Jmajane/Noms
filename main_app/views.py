@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from django.views.generic.base import TemplateView
 from .models import Meal
 from django.views.generic.edit import CreateView
+from django.views.generic import DetailView
 
 
 class Home(TemplateView):
@@ -36,6 +37,9 @@ class MealCreate(CreateView):
     'Salty_Treats', 'Wheat_Flour_Corn_Treats', 'Alcohol']
     template_name = "meal_create.html"
     success_url = "/meals/"
-    
 
+
+class MealDetail(DetailView):
+    model = Meal
+    template_name = "meal_detail.html"
     
