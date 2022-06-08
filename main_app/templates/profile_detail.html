@@ -1,7 +1,7 @@
 {% extends 'base.html' %} 
 {% block content %}
 <div class="detail__img">
-    <img src="{{profile.profile_pic}}" alt="{{profile.name}}" />
+    <img src="{{profile.profile_pic.url}}" alt="{{profile.user.username}}" />
 </div>
 <div class="detail__name">
     
@@ -12,11 +12,6 @@
         <a href="{% url 'profile_update' profile.pk %}" class="button is-info">
             <span class="icon">
                 <i class="fas fa-edit"></i>
-            </span>
-        </a>
-        <a href="" class="button is-danger">
-            <span class="icon">
-                <i class="fas fa-trash-alt"></i>
             </span>
         </a>
     </div>

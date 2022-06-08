@@ -114,3 +114,10 @@ class ProfileUpdate(UpdateView):
     def get_success_url(self):
         return reverse('profile_detail', kwargs={'pk': self.object.pk})
 
+class ProfileCreate(CreateView):
+    model = Profile
+    fields = ['user', 'profile_pic', 'name', 'favorite_food']
+    template_name = "profile_create.html"
+
+    def get_success_url(self):
+        return reverse('create_detail', kwargs={'pk': self.object.pk})
