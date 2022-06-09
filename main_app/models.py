@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 class Friends1(models.Model):
     users1 = models.ManyToManyField(User)    
     current_user = models.ForeignKey(User, related_name='owner',
-    on_delete=models.CASCADE, null=True)
+    on_delete = models.CASCADE, null=True)
 
     def make_friend(cls, current_user, new_friend):
         friend, create = cls.objects.get_or_create(current_user=current_user)
@@ -18,8 +18,8 @@ class Friends1(models.Model):
 
     def __str__(self):
         return str(self.current_user)
- 
-    
+
+
 
 class FriendRequest(models.Model):
     sender = models.ForeignKey(User, null=True, related_name='sender1', on_delete=models.CASCADE)

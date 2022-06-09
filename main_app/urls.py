@@ -13,5 +13,6 @@ urlpatterns = [
     path('account/profile/<int:pk>/', views.ProfileDetail.as_view(), name="profile_detail"),
     path('account/profile/<int:pk>/update', views.ProfileUpdate.as_view(), name="profile_update"),
     path('account/profile/new/', views.ProfileCreate.as_view(), name="profile_create"),
-
+    path('friends/<int:pk>/profile/<int:profile_pk>/', views.FriendProfileAssoc.as_view(), name="friend_profile_assoc"),
+    
 ]

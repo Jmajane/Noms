@@ -95,6 +95,7 @@ class MealList(TemplateView):
             context["header"] = "Past Meals"
         return context
 
+@method_decorator(login_required, name='dispatch')
 class ProfileDetail(DetailView):
     model = Profile
     template_name = "profile_detail.html"
@@ -104,7 +105,6 @@ class ProfileDetail(DetailView):
         recipient = User.objects.get(id=pk)
         model = FriendRequest.objects.get_or_create(sender=request.user, receivers=recipient)
         return redirect('/meals/')
-
 
     def add_or_remove_friend(request, operation, pk):
         new_friend = User.objects.get(id=pk)
@@ -118,6 +118,11 @@ class ProfileDetail(DetailView):
             Friends1.lose_friend(new_friend, request.user)
         return redirect('form4')
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        sender = self.request.user
+        context["friends"] = sender.friends1_set.all()
+        return context
 
 
 class ProfileUpdate(UpdateView):
@@ -136,4 +141,16 @@ class ProfileCreate(CreateView):
     def get_success_url(self):
         return reverse('profile_detail', kwargs={'pk': self.object.pk})
 
+    def get_context_data(self, **kwargs):
+        context = super(CreateView, self).get_context_data(**kwargs)
+        context["user"] = User.objects.get(id=self.request.user.id)
+        return context
 
+class FriendProfileAssoc(View):
+    def get(self, request, pk, user_pk):
+        assoc = request.GET.get("assoc")
+        if assoc == "remove":
+            Friends1.objects.get(pk=pk).user.remove(user_pk)
+        if assoc == "add":
+            Friends1.objects.get(pk=pk).user.add(user_pk)
+        return redirect('home')

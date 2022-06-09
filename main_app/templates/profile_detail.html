@@ -19,6 +19,15 @@
         <h4 class="title is-4">Profile</h4>
         <h5>{{profile.favorite_food}}</h5>
     </div>
+    <div class="friend_list">
+        <h3 class="title is-4">Friends</h3>
+        {% for friend in friends %}
+        
+        <ul>
+            <li>{{friend}}</li>
+        </ul>
+        {% endfor %}
+    </div>
 </div>
 
 {% endblock %}
