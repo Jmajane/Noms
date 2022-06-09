@@ -2,9 +2,34 @@ from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.contrib.auth.models import User
 
+
+class Friends1(models.Model):
+    users1 = models.ManyToManyField(User)    
+    current_user = models.ForeignKey(User, related_name='owner',
+    on_delete=models.CASCADE, null=True)
+
+    def make_friend(cls, current_user, new_friend):
+        friend, create = cls.objects.get_or_create(current_user=current_user)
+        friend.users1.add(new_friend)
+
+    def lose_friend(cls, current_user, new_friend):
+        friend, create = cls.objects.get_or_create(current_user=current_user)
+        friend.users1.remove(new_friend)
+
+    def __str__(self):
+        return str(self.current_user)
+ 
+    
+
+class FriendRequest(models.Model):
+    sender = models.ForeignKey(User, null=True, related_name='sender1', on_delete=models.CASCADE)
+    receiver = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
+
+
+
 class Profile(models.Model):
     user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
-    profile_pic = models.ImageField(upload_to="profile/")
+    profile_pic = models.ImageField(upload_to="media/profile/")
     name = models.CharField(max_length=100)
     favorite_food = models.CharField(max_length=100)
 

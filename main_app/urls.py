@@ -14,5 +14,4 @@ urlpatterns = [
     path('account/profile/<int:pk>/update', views.ProfileUpdate.as_view(), name="profile_update"),
     path('account/profile/new/', views.ProfileCreate.as_view(), name="profile_create"),
 
-
 ]

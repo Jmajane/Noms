@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.views import View
-from django.http import HttpResponse
+from django.contrib.auth.models import User
 from django.views.generic.base import TemplateView
-from .models import Meal, Profile
+from .models import Meal, Profile, FriendRequest, Friends1
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import DetailView
 from django.urls import reverse
@@ -15,34 +15,27 @@ from django.utils.decorators import method_decorator
 class Home(TemplateView):
     template_name = "home.html"
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["friends"] = Friends1.objects.all()
+        return context
+
 
 class About(TemplateView):
     template_name = "about.html"
 
 
-class MealList(TemplateView):
-    template_name = "meal_list.html"
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        dish = self.request.GET.get('dish')
-
-        if dish != None:
-            context["meals"] = Meal.objects.filter(name_icontains=dish, 
-            user=self.request.user)
-            context["header"] = f"Searching for {dish}"
-        else:
-            context["meals"] = Meal.objects.filter(user=self.request.user)
-            context["header"] = "Past Meals"
-        return context
-
 class MealCreate(CreateView):
     model = Meal
-    fields = ['dish', 'Fish_Chicken_Eggs', 'Nuts_Seeds_Beans_Tofu', 'Dairy', 
+    fields = ['dish', 'Red_Meat', 'Fish_Chicken_Eggs', 'Nuts_Seeds_Beans_Tofu', 'Dairy', 
     'Vegetable', 'Fruits', 'Healthy_Fats_Oils', 'Whole_Grains', 'Sugary_Treats',
     'Salty_Treats', 'Wheat_Flour_Corn_Treats', 'Alcohol']
     template_name = "meal_create.html"
     
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(MealCreate, self).form_valid(form)
+
     def get_success_url(self):
         return reverse('meal_detail', kwargs={'pk': self.object.pk})
 
@@ -54,7 +47,7 @@ class MealDetail(DetailView):
 
 class MealUpdate(UpdateView):
     model = Meal
-    fields = ['dish', 'Fish_Chicken_Eggs', 'Nuts_Seeds_Beans_Tofu', 'Dairy', 
+    fields = ['dish', 'Red_Meat', 'Fish_Chicken_Eggs', 'Nuts_Seeds_Beans_Tofu', 'Dairy', 
     'Vegetable', 'Fruits', 'Healthy_Fats_Oils', 'Whole_Grains', 'Sugary_Treats',
     'Salty_Treats', 'Wheat_Flour_Corn_Treats', 'Alcohol']
     template_name = "meal_update.html"
@@ -106,6 +99,27 @@ class ProfileDetail(DetailView):
     model = Profile
     template_name = "profile_detail.html"
 
+    def friend_request(request, pk):
+        sender = request.user
+        recipient = User.objects.get(id=pk)
+        model = FriendRequest.objects.get_or_create(sender=request.user, receivers=recipient)
+        return redirect('/meals/')
+
+
+    def add_or_remove_friend(request, operation, pk):
+        new_friend = User.objects.get(id=pk)
+        if operation == 'add':
+            fq = FriendRequest.objects.get(sender=new_friend, receivers=request.user)
+            Friends1.make_friend(request.user, new_friend)
+            Friends1.make_friend(new_friend, request.user)
+            fq.delete()
+        elif operation == 'remove':
+            Friends1.lose_friend(request.user, new_friend)
+            Friends1.lose_friend(new_friend, request.user)
+        return redirect('form4')
+
+
+
 class ProfileUpdate(UpdateView):
     model = Profile
     fields = ('profile_pic', 'name', 'favorite_food')
@@ -116,8 +130,10 @@ class ProfileUpdate(UpdateView):
 
 class ProfileCreate(CreateView):
     model = Profile
-    fields = ['user', 'profile_pic', 'name', 'favorite_food']
+    fields = ['profile_pic', 'name', 'favorite_food']
     template_name = "profile_create.html"
 
     def get_success_url(self):
-        return reverse('create_detail', kwargs={'pk': self.object.pk})
+        return reverse('profile_detail', kwargs={'pk': self.object.pk})
+
+
