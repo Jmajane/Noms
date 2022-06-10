@@ -8,6 +8,7 @@ django = "*"
 psycopg2 = "*"
 django-on-heroku = "*"
 gunicorn = "*"
+pillow = "*"
 
 [dev-packages]
 
