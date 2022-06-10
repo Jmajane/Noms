@@ -5,6 +5,8 @@
 
 - Having 2 seperate catagory's for Healthy food or Happy food.
 
+
+-
 - Healthy food will be Red Meat(use sparingly), Fish/Chicken/Eggs, Nuts/Seeds/Beans/Tofu, Dairy(yogurt/milk), Vegetable, Fruits, Healthy Fats/Oils, and Whole Grains.
 
 - Happy food will be Sugary Treats, Salty Treats, Wheat/Flour/Corn Treats, and Alcohol.
