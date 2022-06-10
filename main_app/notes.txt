@@ -1,0 +1,47 @@
+<form method="POST" action="">
+    {% csrf_token %}
+        <h3>Register Profile</h3>
+
+        <div class="form-field">
+            {{profile_form.profile_pic.label_tag}}
+            {{profile_form.profile_pic}}
+        </div>
+        <div class="form-field">
+            {{form.username.errors}}
+            {{form.username.label_tag}}
+            {{form.username}}
+        </div>
+        <div class="form-field">
+            {{profile_form.name.label_tag}}
+            {{profile_form.name}}
+        </div>
+        <div class="form-field">
+            {{profile_form.favorite_food.label_tag}}
+            {{profile_form.favorite_food}}
+        </div>
+        <div class="form-field">
+            {{profile_form.bio.label_tag}}
+            {{profile_form.bio}}
+        </div>
+        <div class="form-field">
+            {{profile_form.workout_days.label_tag}}
+            {{profile_form.workout_days}}
+        </div>
+
+        <div class="form-field">
+            {{form.password1.errors}}
+            {{form.password1.label_tag}}
+            {{form.password1}}
+        </div>
+        <div class="form-field">
+            {{form.password2.errors}}
+            {{form.password2.label_tag}}
+            {{form.password2}}
+        </div>
+
+    <hr>
+    <input id="form-button" class="btn btn-success btn-block" type="submit" value="Create Profile">
+    <br>
+        {{form.non_field_errors}}
+    <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+</form>

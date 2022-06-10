@@ -28,10 +28,12 @@ class FriendRequest(models.Model):
 
 
 class Profile(models.Model):
-    user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
-    profile_pic = models.ImageField(upload_to="media/profile/")
-    name = models.CharField(max_length=100)
-    favorite_food = models.CharField(max_length=100)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    profile_pic = models.ImageField(null=True, blank=True, upload_to="media/profile/")
+    name = models.CharField(null=True, blank=True, max_length=100)
+    favorite_food = models.CharField(null=True, blank=True, max_length=100)
+    bio = models.CharField(null=True, blank=True, max_length=300)
+    workout_days = models.CharField(null=True, blank=True, max_length=100)
 
 
     def __str__(self):

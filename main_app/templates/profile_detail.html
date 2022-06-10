@@ -1,7 +1,9 @@
 {% extends 'base.html' %} 
 {% block content %}
 <div class="detail__img">
+    {% if profile.profile_pic %}
     <img src="{{profile.profile_pic.url}}" alt="{{profile.user.username}}" />
+    {% endif %}
 </div>
 <div class="detail__name">
     
@@ -18,15 +20,18 @@
     <div class="detail__about">
         <h4 class="title is-4">Profile</h4>
         <h5>{{profile.favorite_food}}</h5>
+        <h5>{{profile.bio}}</h5>
+        <h5>{{profile.workout_days}}</h5>
     </div>
     <div class="friend_list">
         <h3 class="title is-4">Friends</h3>
-        {% for friend in friends %}
+        {% for friend in profile.user.friends1_set.all %}
         
         <ul>
             <li>{{friend}}</li>
         </ul>
         {% endfor %}
+  
     </div>
 </div>
 
