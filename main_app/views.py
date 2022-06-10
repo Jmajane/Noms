@@ -128,7 +128,6 @@ class ProfileDetail(View):
     template_name = "profile_detail.html"
     def get(self, request, **kwargs):
         profile = Profile.objects.get(user=request.user)
-        
         return render(request, self.template_name, {"profile":profile})
 
     # def friend_request(request, pk):

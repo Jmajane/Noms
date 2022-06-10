@@ -6,7 +6,7 @@
   <div class="field has-addons">
     <div class="control">
       
-      <input class="input" type="text" name="name" placeholder="name" />
+      <input class="input" type="text" name="meals" placeholder="name" />
     </div>
     <div class="control">
       <input class="button is-success" type="submit" value="Search" />
@@ -21,7 +21,17 @@
     <a href="{% url 'meal_detail' meal.pk %}">
       <div class="card">
         <div class="card-image">
-          
+          <figure class="image is-square">
+            {% if meal.dish == "BREAKFAST" %}
+            <img src="https://iamafoodblog.b-cdn.net/wp-content/uploads/2019/02/full-english-7355w-2.jpg" alt="breakfast pic" />
+            {% elif meal.dish == "LUNCH" %}
+            <img src="https://img.taste.com.au/45Y4XB7k/w1200-h630-cfill/taste/2018/02/barbecued-chicken-rice-bowls-taste-135064-1.jpg" alt="lunch picture" />
+            {% elif meal.dish == "DINNER" %}
+            <img src="https://img.bestrecipes.com.au/XViugP0-/br/2019/03/sausage-and-mushroom-stroganoff-951238-2.jpg" alt="dinner picture" />
+            {% elif meal.dish == "SNACKS" %}
+            <img src="https://img.bestrecipes.com.au/u3LX2jaI/br/2019/04/frozen-golden-gaytime-cheesecake-951597-1.jpg" alt="snack picture" />
+            {% endif %}
+          </figure>
             <h4>{{meal.created_on}}</h4>
         
         </div>
