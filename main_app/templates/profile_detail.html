@@ -7,7 +7,7 @@
 </div>
 <div class="detail__name">
     
-    <h1 class="title">{{profile.name}}</h1>
+    <h1 class="title ">{{profile.name}}</h1>
 </div>
 <div class="detail__container">
     <div class="buttons">
@@ -18,24 +18,23 @@
         </a>
     </div>
     <div class="detail__about">
-        <h4 class="title is-4">Profile</h4>
-        <h5>About Me: </h5>
-        <h6>{{profile.bio}}</h6>
+        <h4 class="title is-2 ">Profile</h4>
+        <hr />
 
-        <h5>Favorite Food: </h5>
-        <h6>{{profile.favorite_food}}</h6>
+        <h5 class="is-size-4 has-text-centered">About Me - {{profile.bio}}</h5>    
 
-        <h5>Workout Schedule: </h5>
-        <h6>{{profile.workout_days}}</h6>
+        <h5 class="is-size-4 has-text-centered">Favorite Food - {{profile.favorite_food}}</h5>
 
+        <h5 class="is-size-4 has-text-centered">Workout Schedule - {{profile.workout_days}}</h5>
 
     </div>
     <div class="friend_list">
-        <h3 class="title is-4">Friends</h3>
+        <h3 class="title is-2">Friends</h3>
+        <hr />
         {% for friend in profile.user.friends1_set.all %}
         
         <ul>
-            <li>{{friend}}</li>
+            <li class="is-size-4">{{friend}}</li>
         </ul>
         {% endfor %}
   
