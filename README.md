@@ -22,13 +22,13 @@
 - I know that tracking your food is important. Can we just keep track of the healthy vs not healthy food that we have? Just being able to see what foods I had is what I am looking for.
 
 # User Flow
-- When A user visits the site they will be able to see the home/about pages until they sign up.
+- When A user visits the site they will be able to see the about page until they sign up.
 
 - Once a user signs up they will then have access to add their meals for the day.  Pages will have a day total, week, monthly and year. Users will be able to add/delete/edit any of their own meals that they have added. 
 
 
 # Search
-- Users and search by username to request the ability to follow another user
+- Users can search meals by dish (breakfast, lunch, dinner, snacks).
 
 
 # Technologies Used
@@ -52,11 +52,19 @@
 # ERD
 ![Screen Shot 2022-06-03 at 4 24 49 PM](https://user-images.githubusercontent.com/100162086/171946682-3bf80e3c-5da0-47f9-9cdb-61a4199fd99f.png)
 
-# Features To Come
+# Features To Come (Stretch Goals)
 - Adding Friends / also being able to view your friends profile page
+- Search function to be able to find a person by their username
 - Having a total for days / weeks / months
 - Adding a graph to see the healthy to happy food totals
 
 # Current Bugs
 - Search function not working properly
 - Images uploaded for the user profile may break and stop showing up
+
+# Contribution Guidelines
+- As this is my first full-stack build all contributions to make this code/app better is much appreciated.
+- For anyone looking to contribute please reach out VIA linkedin or email.
+- Please note that all code the is submitted will be reviewed to make sure of proper functionality.
+- This app run on Django for Frontend & Backend.
+- If you are looking to contribute please look of the current bugs/ features to come as those will get priority before any other updates are made.
