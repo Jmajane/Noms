@@ -53,4 +53,10 @@
 ![Screen Shot 2022-06-03 at 4 24 49 PM](https://user-images.githubusercontent.com/100162086/171946682-3bf80e3c-5da0-47f9-9cdb-61a4199fd99f.png)
 
 # Features To Come
--
+- Adding Friends / also being able to view your friends profile page
+- Having a total for days / weeks / months
+- Adding a graph to see the healthy to happy food totals
+
+# Current Bugs
+- Search function not working properly
+- Images uploaded for the user profile may break and stop showing up
