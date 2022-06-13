@@ -50,7 +50,8 @@
 ![Screen Shot 2022-06-03 at 2 07 19 PM](https://user-images.githubusercontent.com/100162086/171935171-ccd09225-216d-447e-8a50-2d3f986d5c28.png)
 
 # ERD
-![Screen Shot 2022-06-03 at 4 24 49 PM](https://user-images.githubusercontent.com/100162086/171946682-3bf80e3c-5da0-47f9-9cdb-61a4199fd99f.png)
+![Screen Shot 2022-06-13 at 9 12 46 AM](https://user-images.githubusercontent.com/100162086/173361675-44712d84-b0c1-44cc-9be4-da595c5c6fc8.png)
+
 
 # Features To Come (Stretch Goals)
 - Adding Friends / also being able to view your friends profile page
@@ -68,3 +69,4 @@
 - Please note that all code the is submitted will be reviewed to make sure of proper functionality.
 - This app run on Django for Frontend & Backend.
 - If you are looking to contribute please look of the current bugs/ features to come as those will get priority before any other updates are made.
+
