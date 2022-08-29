@@ -70,3 +70,5 @@
 - This app run on Django for Frontend & Backend.
 - If you are looking to contribute please look of the current bugs/ features to come as those will get priority before any other updates are made.
 
+# Page
+- https://noms-capstone.herokuapp.com/about/ 

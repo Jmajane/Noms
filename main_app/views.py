@@ -13,28 +13,7 @@ from django.utils.decorators import method_decorator
 
 
 from django.contrib import messages
-from .forms import createUserForm, profileForm
 
-
-# def registerPage(request):
-#     if request.method == 'POST':
-#         form = createUserForm(request.POST)
-#         profile_form = profileForm(request.POST)
-
-#         if form.is_valid() and profile_form.is_valid():
-#             user = form.save()
-
-#             profile = profile_form.save(commit=False)
-#             profile.user = user
-
-#             profile.save()
-
-#             messages.success(request,  'Your account has been successfully created')
-
-#             return redirect('login')
-            
-#     context = {'form': form, 'profile_form': profile_form}
-#     return render(request, 'app_name/signup.html', context)
 
 
 
