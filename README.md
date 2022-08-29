@@ -52,6 +52,15 @@
 # ERD
 ![Screen Shot 2022-06-13 at 9 12 46 AM](https://user-images.githubusercontent.com/100162086/173361675-44712d84-b0c1-44cc-9be4-da595c5c6fc8.png)
 
+# Webpage Pictures
+
+![Screen Shot 2022-06-13 at 9 45 34 AM](https://user-images.githubusercontent.com/100162086/173371414-373f4d1e-6aee-4aa4-befb-eb982d9d57cc.png)
+
+![Screen Shot 2022-06-13 at 9 45 02 AM](https://user-images.githubusercontent.com/100162086/173371431-06c2c3e7-d40c-4b6b-bb79-228a3971c86c.png)
+
+![Screen Shot 2022-06-13 at 9 45 17 AM](https://user-images.githubusercontent.com/100162086/173371443-5f865686-b740-4199-8972-e93df10021a5.png)
+
+
 
 # Features To Come (Stretch Goals)
 - Adding Friends / also being able to view your friends profile page
